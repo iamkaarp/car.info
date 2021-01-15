@@ -19,7 +19,6 @@ chrome.runtime.onMessage.addListener(function(msg) {
     let opt = {};
     if(string.length > 0) {
         if(string.match(new RegExp(pattern))) {
-
             opt = {
                 'title': 'Car.info - ' + string,
                 'visible': true,
