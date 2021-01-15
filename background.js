@@ -1,7 +1,6 @@
-function gotoCarInfo(info) {
+function gotoCarInfo(a) {
     const baseURL = 'https://www.car.info/sv-se/license-plate/S/';
-    const string = info.selectionText.toUpperCase();
-    const url = baseURL + string.toLowerCase();
+    const url = baseURL + a.toLowerCase();
     window.open(
         url,
         '_blank',
@@ -12,7 +11,6 @@ const id = chrome.contextMenus.create({
     'title': 'Car.info',
     'contexts':['selection'],
     'visible': false,
-    'onclick': gotoCarInfo,
 });
 
 chrome.runtime.onMessage.addListener(function(msg) {
@@ -25,6 +23,7 @@ chrome.runtime.onMessage.addListener(function(msg) {
             opt = {
                 'title': 'Car.info - ' + string,
                 'visible': true,
+                'onclick': gotoCarInfo(string),
             };
         } else {
             opt = {
