@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "globals": {
+        "window": true,
+        "chrome": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "no-console" : "off",
+        "indent": [
+            "error",
+            4
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "no-trailing-spaces": [
+            "error"
+        ],
+        "valid-jsdoc": [
+            "error",
+            {
+                "requireReturnDescription": false,
+                "requireParamDescription": false
+            }
+        ],
+        "eqeqeq": [
+            "error"
+        ],
+        "curly": [
+            "error"
+        ],
+        "no-param-reassign": [
+            "error"
+        ],
+        "no-useless-concat": [
+            "error"
+        ],
+        "yoda": [
+            "error"
+        ],
+        "max-depth": [
+            "warn"
+        ]
+    }
+}
