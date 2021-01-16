@@ -4,11 +4,11 @@ chromeRuntimePort.onDisconnect.addListener(() => {
 });
 
 document.addEventListener('selectionchange', function() {
-    var selection = window.getSelection().toString().trim();
-    chrome.runtime.sendMessage({
-        request: 'loadContextMenu',
-        selection: selection,
-    });
+    const selection = window.getSelection().toString().trim();
+    if(selection.length > 0) {
+        chrome.runtime.sendMessage({
+            request: 'loadContextMenu',
+            selection: selection,
+        });
+    }
 });
-
-chromeRuntimePort.postMessage('Hey, finally no errors');
